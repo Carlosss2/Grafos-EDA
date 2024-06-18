@@ -81,16 +81,9 @@ btnDijstra.addEventListener("click", ()  => {
 
     let destino = document.getElementById("verticeFinal").value.trim();
 
-
-    if (origen === '' || destino === '') {
-        mostrarError("Debes ingresar nodos válidos para calcular el camino más corto.");
-        return;
-    }
-
-   
     const distance = graph.dijkstra(origen,destino)
 
-    if (distance === 1000000) {
+    if (distance === 1000000 || distance>1000000 ) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -103,8 +96,7 @@ btnDijstra.addEventListener("click", ()  => {
             text: "Ya puede ver la ruta mas corta"
             
         })
-       
-       }
+    }
 
 
 

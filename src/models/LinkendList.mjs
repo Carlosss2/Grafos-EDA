@@ -52,7 +52,7 @@ export default class LinkedList {
         console.log(result);
     }
 
-    get head() {
+    getHead() {
         return this.#head;
     }
 }

@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded',()=> {
 
 
 });
-
-btnDijstra.addEventListener("click", ()  => {
+/**
+ * btnDijstra.addEventListener("click", ()  => {
    
     let origen =document.getElementById("verticeInicio").value.trim();
     let destino = document.getElementById("verticeFinal").value.trim();
@@ -99,5 +99,27 @@ btnDijstra.addEventListener("click", ()  => {
     }
 
 });
+ */
+
+
+let imprimirMensaje = (d) =>{
+  
+    d.forEach(valor => {
+      let elementP = document.createElement('p')
+      elementP.textContent = valor;
+      console.log(elementP)
+      imprimir3.appendChild(elementP);
+  }); 
+  }
+  
+  btnDijstra.addEventListener('click',()=>{
+    let verticePartida = document.getElementById('verticeInicio').value;
+    graph.dijkstra(verticePartida,imprimirMensaje);
+    Swal.fire({
+        icon: "info",
+        text: "Ya puede ver la ruta mas corta"
+        
+    })
+  })
 
 
